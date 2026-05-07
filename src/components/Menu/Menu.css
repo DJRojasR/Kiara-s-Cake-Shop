@@ -1,0 +1,290 @@
+/* ═══════════════════════════════════════════════════
+   MENU.CSS  —  Estilos del componente Menu
+═══════════════════════════════════════════════════ */
+
+
+/* ── Sección principal ─────────────────────────── */
+.menu {
+  background-color: var(--light);
+  padding: 80px 0;
+}
+
+.menu .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+
+/* ── Título del menú ───────────────────────────── */
+.menu_title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.titulo {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.titulo2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Línea decorativa */
+.linea {
+  width: 96px;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  margin: 0 auto;
+  border-radius: 9999px;
+}
+
+
+/* ── Selector de categorías ────────────────────── */
+.selector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+/* Botón base */
+.btn {
+  padding: 10px 24px;
+  border-radius: 9999px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--dark);
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(249, 168, 212, 0.15);  /* --primary con alpha */
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Botón activo */
+.btn.activo {
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(244, 114, 182, 0.35);
+}
+
+
+/* ── Grid de productos ─────────────────────────── */
+.producto {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .producto { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .producto { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+/* ── Tarjeta de producto ───────────────────────── */
+.producto_item {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(92, 64, 51, 0.08);  /* --dark con alpha */
+  transition: box-shadow 0.5s ease;
+}
+
+.producto_item:hover {
+  box-shadow: 0 20px 40px rgba(244, 114, 182, 0.18); /* sombra --accent al hover */
+}
+
+
+/* ── Badge de precio ───────────────────────────── */
+.precio {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+.precio_span {
+  display: inline-block;
+  background: rgba(255, 247, 249, 0.95); /* --light con alpha */
+  backdrop-filter: blur(8px);
+  color: var(--dark);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 12px rgba(92, 64, 51, 0.1);
+}
+
+
+/* ── Imagen ────────────────────────────────────── */
+.imagen {
+  position: relative;
+  height: 256px;
+  overflow: hidden;
+}
+
+/* Overlay oscuro en hover */
+.imagen_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(92, 64, 51, 0.55), rgba(92, 64, 51, 0.15), transparent); /* --dark */
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.producto_item:hover .imagen_overlay {
+  opacity: 1;
+}
+
+.imagen_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.producto_item:hover .imagen_img {
+  transform: scale(1.1);
+}
+
+
+/* ── Contenido ─────────────────────────────────── */
+.contenido {
+  padding: 24px;
+}
+
+.text_h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.producto_item:hover .text_h3 {
+  color: var(--accent);
+}
+
+.text_p {
+  color: var(--dark);
+  opacity: 0.7;
+  font-size: 0.875rem;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* ── Botón "Ordenar Ahora" ─────────────────────── */
+/* Siempre visible en móvil, aparece en hover en desktop */
+.btn_ordenar {
+  margin-top: 16px;
+  width: 100%;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .btn_ordenar {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .producto_item:hover .btn_ordenar {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn_ordenar:hover {
+  box-shadow: 0 8px 20px rgba(244, 114, 182, 0.4);
+}
+
+
+/* ── Decoración esquina ────────────────────────── */
+.decoracion {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to bottom-right, var(--primary), var(--secondary)); /* rosa → celeste */
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.producto_item:hover .decoracion {
+  opacity: 0.45;
+}
+
+
+/* ── CTA final ─────────────────────────────────── */
+.cta {
+  text-align: center;
+  margin-top: 64px;
+}
+
+.buscar {
+  color: var(--dark);
+  opacity: 0.7;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 24px;
+}
+
+/* Botón "Explora más" */
+.ver_mas {
+  background: var(--dark);
+  color: var(--light);
+  padding: 16px 32px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(92, 64, 51, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.ver_mas:hover {
+  background: #7a5848;               /* --dark un tono más claro */
+  transform: translateY(-2px);
+}
