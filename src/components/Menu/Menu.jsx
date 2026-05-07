@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import pie from '../../assets/pie.jpg';
-import Pastel1 from '../../assets/pastel1.png';
-import Pastel2 from '../../assets/pastel2.jpg';
+import Pastel1 from '../../assets/Pastel1.png';
+import Pastel2 from '../../assets/Pastel2.jpg';
 import keke1 from '../../assets/keke1.jpg';
 import keke2 from '../../assets/keke2.jpg';
 import empanadas from '../../assets/empanadas.jpg';
