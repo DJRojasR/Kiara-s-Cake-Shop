@@ -6,7 +6,7 @@
 /* ── Sección principal ─────────────────────────── */
 .menu {
   background-color: var(--light);
-  padding: 80px 0;
+  padding: 0;
 }
 
 .menu .container {

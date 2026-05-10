@@ -68,3 +68,15 @@ h1, h2 {
   margin: auto;
   padding: 40px 0;
 }
+
+/* Desktop */
+#menu, #nosotros, #contacto {
+    scroll-margin-top: 40px;
+}
+
+/* Móvil — el navbar puede tener diferente alto */
+@media (max-width: 768px) {
+    #menu, #nosotros, #contacto {
+        scroll-margin-top: 300px; /* ajusta al alto de tu navbar en móvil */
+    }
+}
